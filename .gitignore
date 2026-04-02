@@ -1,0 +1,50 @@
+# Environment variables and secrets
+.env
+.env.local
+.env.*.local
+.env.*.private
+
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Next.js build files
+.next/
+out/
+dist/
+
+# Production build
+build/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+.sublime-project
+.sublime-workspace
+*.code-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+.gitkeep
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Testing
+coverage/
+.nyc_output/
+
+# Misc
+*.pem
+.cache/
