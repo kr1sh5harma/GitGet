@@ -29,6 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${dmSans.variable} ${dmMono.variable}`} suppressHydrationWarning>
       <body className="font-sans bg-zinc-50 dark:bg-[#0a0a0a] text-slate-900 dark:text-[#efefef] min-h-screen">
         <ThemeProvider attribute="class" defaultTheme="dark" disableTransitionOnChange>
+          <StarField />
           <div className="transition-opacity duration-500">
             {children}
           </div>

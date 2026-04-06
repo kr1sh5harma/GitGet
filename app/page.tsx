@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion'
 import Navbar from '@/components/Navbar'
-import StarField from '@/components/StarField'
 import SearchBar from '@/components/SearchBar'
 import TypewriterText from '@/components/TypewriterText'
 
@@ -33,7 +32,6 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <StarField />
 
       <motion.main
         initial={{ opacity: 0 }}
