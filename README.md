@@ -1,4 +1,4 @@
-# RepoLens — GitHub Profile Analyzer
+# GitGet — GitHub Profile Analyzer
 
 A clean, insightful GitHub profile analyzer built with **Next.js 14**, **Tailwind CSS**, and the **GitHub REST API**.
 
