@@ -8,7 +8,7 @@ export default function RepoCard({ repo }: { repo: GHRepo }) {
   return (
     <Link
       href={`/${repo.owner.login}/${repo.name}`}
-      className="group block bg-[#111] border border-[#1e1e1e] rounded-xl p-5 hover:border-[#2e2e2e] hover:bg-[#141414] transition-all duration-200"
+      className="group block bg-[#111] border border-[#1e1e1e] rounded-xl p-5 hover:border-[#2e2e2e] hover:bg-[#141414] transition-all duration-200 holographic-card"
     >
       {/* Header */}
       <div className="flex items-start justify-between gap-3 mb-3">

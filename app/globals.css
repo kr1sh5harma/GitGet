@@ -67,3 +67,66 @@ a:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
+
+/* Holographic Card Effect matching RepoLens Theme */
+.holographic-card {
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+}
+
+.holographic-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background: linear-gradient(
+    125deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.3) 40%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0.3) 60%,
+    transparent 80%
+  );
+  background-size: 200% 200%;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  border-radius: inherit;
+  z-index: 10;
+}
+
+.dark .holographic-card::before {
+  background: linear-gradient(
+    125deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.02) 40%,
+    rgba(255, 255, 255, 0.06) 50%,
+    rgba(255, 255, 255, 0.02) 60%,
+    transparent 80%
+  );
+  mix-blend-mode: screen;
+}
+
+.holographic-card:hover::before {
+  opacity: 1;
+  animation: holographic-shine 1.2s ease-out forwards;
+}
+
+.holographic-card:hover {
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+}
+
+.dark .holographic-card:hover {
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.8),
+              0 0 20px rgba(255, 255, 255, 0.03);
+}
+
+@keyframes holographic-shine {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

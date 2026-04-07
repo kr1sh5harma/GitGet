@@ -42,7 +42,7 @@ export default function AnimatedRepoCard({ repo, index = 0 }: AnimatedRepoCardPr
       <a
         href={`/${repo.owner.login}/${repo.name}`}
         onClick={handleClick}
-        className="group block bg-white dark:bg-[#111] border border-zinc-200 dark:border-[#1e1e1e] rounded-xl p-5 hover:border-zinc-300 dark:hover:border-[#2e2e2e] hover:bg-zinc-50 dark:hover:bg-[#141414] transition-all duration-300"
+        className="group block bg-white dark:bg-[#111] border border-zinc-200 dark:border-[#1e1e1e] rounded-xl p-5 hover:border-zinc-300 dark:hover:border-[#2e2e2e] hover:bg-zinc-50 dark:hover:bg-[#141414] transition-all duration-300 holographic-card"
       >
         {/* Header */}
         <div className="flex items-start justify-between gap-3 mb-3">

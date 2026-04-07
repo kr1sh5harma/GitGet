@@ -8,6 +8,7 @@ import {
   computeRepoHealth, analyzeCommitStyle, buildCommitHeatmap,
   timeAgo, formatDate, fmtNum
 } from '@/lib/utils'
+import RepoLifecycleChart from './RepoLifecycleChart'
 
 interface Props {
   repo: GHRepo
@@ -277,6 +278,9 @@ function OverviewPanel({ repo, commits, prs, contributors, languages }: Props) {
           )}
         </motion.div>
       </motion.div>
+
+      {/* Repo Timeline / Lifecycle */}
+      <RepoLifecycleChart repo={repo} commits={commits} />
 
       {/* Language Breakdown */}
       {langBreakdown.length > 0 && (
