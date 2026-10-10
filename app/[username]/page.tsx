@@ -4,6 +4,7 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import Navbar from '@/components/Navbar'
 import RepoFilter from '@/components/RepoFilter'
+import AISummary from '@/components/AISummary'
 import ShareProfileMenu from '@/components/ShareProfileMenu'
 import LanguageTimelineChart from '@/components/LanguageTimelineChart'
 import { getUser, getUserRepos } from '@/lib/github'
@@ -135,6 +136,41 @@ export default async function UserPage({ params }: Props) {
             </div>
           ))}
         </div>
+
+        {/* ─── AI PROFILE SUMMARY ──────────────────────────────────────── */}
+        <AISummary
+          profileData={{
+            username: user.login,
+            name: user.name,
+            bio: user.bio,
+            location: user.location,
+            company: user.company,
+            joinYear,
+            yearsOnGH,
+            publicRepos: user.public_repos,
+            followers: user.followers,
+            following: user.following,
+            totalStars: impact.totalStars,
+            totalForks: impact.totalForks,
+            sourceRepos: sourceRepos.length,
+            forkedRepos: forkedRepos.length,
+            archetype: archetype.label,
+            activityLevel: activity.label,
+            languages: langs,
+            topRepos: impact.topRepos.map(r => ({
+              name: r.name,
+              language: r.language,
+              stars: r.stargazers_count,
+              forks: r.forks_count,
+              description: r.description,
+            })),
+            recentActivity: {
+              last7days: repos.filter(r => Date.now() - new Date(r.pushed_at).getTime() < 7 * 86400000).length,
+              last30days: repos.filter(r => Date.now() - new Date(r.pushed_at).getTime() < 30 * 86400000).length,
+              last90days: repos.filter(r => Date.now() - new Date(r.pushed_at).getTime() < 90 * 86400000).length,
+            },
+          }}
+        />
 
         {/* ─── INSIGHTS GRID ─────────────────────────────────────────── */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
