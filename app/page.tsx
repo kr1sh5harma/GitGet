@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import Navbar from '@/components/Navbar'
 import SearchBar from '@/components/SearchBar'
 import TypewriterText from '@/components/TypewriterText'
+import CreatorBadge from '@/components/CreatorBadge'
 
 export default function Home() {
   const containerVariants = {
@@ -134,6 +135,9 @@ export default function Home() {
             </motion.span>
           ))}
         </motion.div>
+
+        {/* Floating creator badge */}
+        <CreatorBadge />
       </motion.main>
     </>
   )
